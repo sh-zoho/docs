@@ -9,64 +9,135 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "languages": [
       {
-        "tab": "Guides",
-        "groups": [
+        "language": "en",
+        "tabs": [
           {
-            "group": "Getting started",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
+            "tab": "Guides",
+            "groups": [
+              {
+                "group": "Getting started",
+                "pages": [
+                  "index",
+                  "quickstart",
+                  "development"
+                ]
+              },
+              {
+                "group": "Customization",
+                "pages": [
+                  "essentials/settings",
+                  "essentials/navigation"
+                ]
+              },
+              {
+                "group": "Writing content",
+                "pages": [
+                  "essentials/markdown",
+                  "essentials/code",
+                  "essentials/images",
+                  "essentials/components",
+                  "essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "Agent ready",
+                "pages": [
+                  "agent-ready/prompt",
+                  "agent-ready/visibility",
+                  "agent-ready/contextual",
+                  "ai-tools/cursor",
+                  "ai-tools/claude-code",
+                  "ai-tools/windsurf"
+                ]
+              }
             ]
           },
           {
-            "group": "Customization",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation"
-            ]
-          },
-          {
-            "group": "Writing content",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/components",
-              "essentials/reusable-snippets"
-            ]
-          },
-          {
-            "group": "Agent ready",
-            "pages": [
-              "agent-ready/prompt",
-              "agent-ready/visibility",
-              "agent-ready/contextual",
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
+            "tab": "API reference",
+            "groups": [
+              {
+                "group": "API documentation",
+                "pages": [
+                  "api-reference/introduction"
+                ]
+              },
+              {
+                "group": "Endpoint examples",
+                "pages": [
+                  "api-reference/endpoint/get",
+                  "api-reference/endpoint/create",
+                  "api-reference/endpoint/delete",
+                  "api-reference/endpoint/webhook"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "tab": "API reference",
-        "groups": [
+        "language": "zh",
+        "tabs": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
+            "tab": "指南",
+            "groups": [
+              {
+                "group": "入门",
+                "pages": [
+                  "zh/index",
+                  "zh/quickstart",
+                  "zh/development"
+                ]
+              },
+              {
+                "group": "自定义",
+                "pages": [
+                  "zh/essentials/settings",
+                  "zh/essentials/navigation"
+                ]
+              },
+              {
+                "group": "编写内容",
+                "pages": [
+                  "zh/essentials/markdown",
+                  "zh/essentials/code",
+                  "zh/essentials/images",
+                  "zh/essentials/components",
+                  "zh/essentials/reusable-snippets"
+                ]
+              },
+              {
+                "group": "智能体就绪",
+                "pages": [
+                  "zh/agent-ready/prompt",
+                  "zh/agent-ready/visibility",
+                  "zh/agent-ready/contextual",
+                  "zh/ai-tools/cursor",
+                  "zh/ai-tools/claude-code",
+                  "zh/ai-tools/windsurf"
+                ]
+              }
             ]
           },
           {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+            "tab": "API 参考",
+            "groups": [
+              {
+                "group": "API 文档",
+                "pages": [
+                  "zh/api-reference/introduction"
+                ]
+              },
+              {
+                "group": "端点示例",
+                "pages": [
+                  "zh/api-reference/endpoint/get",
+                  "zh/api-reference/endpoint/create",
+                  "zh/api-reference/endpoint/delete",
+                  "zh/api-reference/endpoint/webhook"
+                ]
+              }
             ]
           }
         ]
