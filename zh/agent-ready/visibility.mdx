@@ -1,0 +1,85 @@
+---
+title: '可见性'
+description: '向人类读者和 AI 代理展示不同的内容'
+icon: 'eye'
+---
+
+`Visibility` 组件让单个页面可以服务两类受众:在网页上阅读的人类读者和处理 Markdown 输出的 AI 代理。标记为 `for="humans"` 的内容会出现在渲染后的页面上,但会从 Markdown 导出中排除。标记为 `for="agents"` 的内容在网页上隐藏,但包含在 Markdown 中。
+
+这意味着您可以为人类读者编写对话式、以 UI 为中心的说明,同时为 AI 编写结构化、机器可读的说明——而无需维护两个单独的页面。
+
+## 工作原理
+
+Mintlify 为每个页面提供两个 URL:
+
+- `https://docs.example.com/page` — 渲染后的站点,面向人类读者
+- `https://docs.example.com/page.md` — 原始 Markdown,面向 AI 代理
+
+`Visibility` 控制在每个 URL 上显示的内容。
+
+## 示例
+
+```mdx
+<Visibility for="humans">
+  <Steps>
+    <Step title="Open the dashboard">
+      Navigate to [dashboard.example.com](https://dashboard.example.com) and sign in.
+    </Step>
+    <Step title="Create an API key">
+      Go to **Settings → API Keys** and click **New key**.
+    </Step>
+  </Steps>
+</Visibility>
+
+<Visibility for="agents">
+  To authenticate, send a POST request to `/v1/auth/token` with the user's
+  email and password in the request body. The response includes a bearer token
+  valid for 24 hours. Pass this token as `Authorization: Bearer <token>` on
+  all subsequent requests.
+</Visibility>
+```
+
+人类读者看到的是分步的 UI 操作演示。处理 Markdown 的 AI 代理则得到直接的 API 操作说明。
+
+## 属性
+
+<ResponseField name="for" type='"humans" | "agents"' required>
+  - `"humans"` — 在渲染后的网页上可见,从 `.md` 导出中排除
+  - `"agents"` — 在渲染后的网页上隐藏,包含在 `.md` 导出中
+</ResponseField>
+
+## 何时使用
+
+<Columns cols={2}>
+  <Card title="引导流程" icon="person-walking-arrow-right">
+    向人类展示 UI 截图和按钮点击。向代理提供等效的 API 调用。
+  </Card>
+  <Card title="配置指南" icon="sliders">
+    向人类展示可视化的设置面板。向代理提供等效的 JSON 或 CLI 标志。
+  </Card>
+  <Card title="错误消息" icon="triangle-exclamation">
+    向人类展示友好的说明。向代理提供结构化的错误代码和修复步骤。
+  </Card>
+  <Card title="概念页面" icon="lightbulb">
+    为人类提供丰富的图表和叙述。为代理提供简洁的结构化摘要。
+  </Card>
+</Columns>
+
+## 与 Prompt 组合使用
+
+`Visibility` 和 `Prompt` 互为补充。使用 `Visibility` 为代理提供结构化上下文,然后使用 `Prompt` 为人类读者提供可以让 AI 询问相同内容的提示词。
+
+```mdx
+<Visibility for="agents">
+  ## Authentication schema
+  - Method: Bearer token
+  - Header: `Authorization: Bearer <token>`
+  - Token TTL: 86400 seconds
+  - Refresh endpoint: POST /v1/auth/refresh
+</Visibility>
+
+<Prompt description="Ask about authentication" icon="lock">
+  Explain how authentication works in this API and show me example code for
+  getting a token and making an authenticated request.
+</Prompt>
+```

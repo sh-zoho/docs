@@ -1,0 +1,39 @@
+---
+title: '代码块'
+description: '展示行内代码和代码块'
+icon: 'code'
+---
+
+## 行内代码
+
+要将某个 `word` 或 `phrase` 标记为代码,请用反引号(`)将其括起来。
+
+```
+To denote a `word` or `phrase` as code, enclose it in backticks (`).
+```
+
+## 代码块
+
+使用[围栏代码块](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks),用三个反引号包围代码,并在起始反引号后跟上代码片段的编程语言,以获得语法高亮。您也可以在编程语言后写上代码的名称。
+
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+````md
+```java HelloWorld.java
+class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+````
+
+## 代码分组
+
+要将同一代码片段以多种语言显示为标签页,请使用 `CodeGroup` 组件。有关用法,请参阅[组件](/essentials/components#code-groups)。
