@@ -1,0 +1,88 @@
+---
+title: "Markdown 语法"
+description: "标准 markdown 中的文本、标题和样式"
+icon: "text-size"
+---
+
+## 标题
+
+最适合用作章节标题。
+
+```md
+## Titles
+```
+
+### 副标题
+
+最适合用作子章节标题。
+
+```md
+### Subtitles
+```
+
+<Tip>
+  每个**标题**和**副标题**都会创建一个锚点,并显示在右侧的目录中。
+</Tip>
+
+## 文本格式
+
+我们支持大多数 markdown 格式。只需在文本周围添加 `**`、`_` 或 `~` 即可对其进行格式化。
+
+| 样式 | 编写方式 | 结果 |
+| --- | --- | --- |
+| 加粗 | `**bold**` | **bold** |
+| 斜体 | `_italic_` | _italic_ |
+| 删除线 | `~strikethrough~` | ~~strikethrough~~ |
+
+您可以组合使用这些。例如,写 `**_bold and italic_**` 以获得 **_bold and italic_** 文本。
+
+您需要使用 HTML 来编写上标和下标文本。也就是说,在您的文本周围添加 `<sup>` 或 `<sub>`。
+
+| 文本大小 | 编写方式 | 结果 |
+| --- | --- | --- |
+| 上标 | `<sup>superscript</sup>` | <sup>superscript</sup> |
+| 下标 | `<sub>subscript</sub>` | <sub>subscript</sub> |
+
+## 链接到页面
+
+您可以通过将文本包装在 `[]()` 中来添加链接。您可以编写 `[link to google](https://google.com)` 以[链接到 google](https://google.com)。
+
+文档中页面的链接需要是根相对路径。基本上,您应该包含整个文件夹路径。例如,`[link to text](/writing-content/text)` 链接到我们组件部分中的页面 "Text"。
+
+相对链接(如 `[link to text](../text)`)的打开速度较慢,因为我们无法轻易地优化它们。
+
+## 引用块
+
+### 单行
+
+要创建引用块,在段落前添加 `>`。
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+```
+
+### 多行
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+```md
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+```
+
+### LaTeX
+
+Mintlify 通过 Latex 组件支持 [LaTeX](https://www.latex-project.org)。
+
+```md
+<Latex>8 x (vk x H1 - H2) = (0,1)</Latex>
+```
+
+TC-07 热修复分支修复文档:为 TC-09 测试澄清 markdown 语法
+
+TC-10 的写入器测试编辑

@@ -1,0 +1,75 @@
+---
+title: 'Prompt 组件'
+description: '嵌入可共享的 AI 提示,读者可以复制或在 Cursor 中打开'
+icon: 'robot'
+---
+
+`Prompt` 组件显示一个预构建的 AI 提示,通过一键操作即可将其复制到剪贴板或直接在 Cursor 中打开。它非常适合您希望向读者提供即用型提示的任何文档页面。
+
+## 基本用法
+
+<Prompt description="总结此 API 端点">
+You are a technical writer. Given the following API endpoint documentation, write a one-paragraph summary that explains what the endpoint does, what inputs it requires, and what it returns. Be concise and use plain language.
+</Prompt>
+
+```mdx
+<Prompt description="Summarize this API endpoint">
+You are a technical writer. Given the following API endpoint documentation,
+write a one-paragraph summary that explains what the endpoint does, what
+inputs it requires, and what it returns. Be concise and use plain language.
+</Prompt>
+```
+
+## 与 Cursor 集成
+
+添加 `actions={["copy", "cursor"]}` 也可以显示"在 Cursor 中打开"按钮。这对于读者将在其编辑器中使用的提示特别有用。
+
+<Prompt
+  description="生成类型化的 API 客户端"
+  icon="code"
+  actions={["copy", "cursor"]}
+>
+You are an expert TypeScript developer. Given the following OpenAPI specification, generate a fully-typed API client using native fetch. Include:
+- A base client class with configurable baseUrl and auth headers
+- One method per endpoint, with typed request parameters and response types
+- JSDoc comments on each method
+Do not use any third-party HTTP libraries.
+</Prompt>
+
+```mdx
+<Prompt
+  description="Generate a typed API client"
+  icon="code"
+  actions={["copy", "cursor"]}
+>
+You are an expert TypeScript developer. Given the following OpenAPI
+specification, generate a fully-typed API client using native fetch...
+</Prompt>
+```
+
+## 属性
+
+<ResponseField name="description" type="string" required>
+  显示在提示内容上方的标题文本。支持 Markdown。
+</ResponseField>
+
+<ResponseField name="children" type="string" required>
+  要复制或发送到 Cursor 的提示文本。
+</ResponseField>
+
+<ResponseField name="actions" type="array">
+  要显示哪些操作按钮。选项: `"copy"`、`"cursor"`。默认为 `["copy"]`。
+</ResponseField>
+
+<ResponseField name="icon" type="string">
+  与描述一起显示的图标。支持 Font Awesome、Lucide 和 Tabler 图标名称、图像 URL 或内联 SVG。
+</ResponseField>
+
+## 何时使用
+
+`Prompt` 组件在您教导读者使用 AI 的任何地方都能很好地工作:
+
+- **快速入门指南** — 给读者一个提示来生成他们的第一个集成
+- **API 参考页面** — 包含一个用于从规范生成客户端代码的提示
+- **故障排除指南** — 嵌入一个调试提示,读者可以针对他们自己的错误日志运行
+- **概念页面** — 添加一个提示,用于通过 AI 助手进一步探索该主题
