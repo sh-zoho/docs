@@ -141,6 +141,15 @@
             ]
           }
         ]
+      },
+      {
+        "language": "de"
+      },
+      {
+        "language": "de",
+        "pages": [
+          "untitled-page"
+        ]
       }
     ],
     "global": {
